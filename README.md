@@ -21,7 +21,6 @@ This is the backend of the NearbyFix application, built using Spring Boot. It ha
 
 ### 1. Clone the repo and open in your IDE
 
-```bash
 git clone https://github.com/SuryaMdk/nearbyfix-backend.git
 
 2. Configure application.properties
