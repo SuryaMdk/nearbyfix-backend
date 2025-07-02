@@ -1,14 +1,18 @@
-# Use official OpenJDK base image
+# Use an official Java image
 FROM openjdk:17-jdk-slim
 
 # Set working directory
 WORKDIR /app
 
-# Copy project files
+# Copy everything
 COPY . .
 
-# Build the app
+# ✅ Give executable permission to mvnw
+RUN chmod +x mvnw
+
+# ✅ Build the app
 RUN ./mvnw package -DskipTests
 
-# Run the JAR
-CMD ["java", "-jar", "target/nearbyfix-backend.jar"]
+# ✅ Run the built JAR
+CMD ["java", "-jar", "target/nearbyfix-backend-0.0.1-SNAPSHOT.jar"]
+
