@@ -18,9 +18,12 @@ public class ServiceProvider {
     private Double latitude;
     private Double longitude;
     private Boolean isAvailable;
+    private String email;
+    private String password;
+    private String location;
     
 	public ServiceProvider(Long id, String name, String phone, String serviceType, Double latitude, Double longitude,
-			Boolean isAvailable) {
+			Boolean isAvailable, String email, String password, String location) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -29,8 +32,41 @@ public class ServiceProvider {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.isAvailable = isAvailable;
+		this.email = email;
+		this.password = password;
+		this.location = location;
 	}
-	
+
+	public ServiceProvider() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 	public Long getId() {
 		return id;
 	}

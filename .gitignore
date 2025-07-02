@@ -1,33 +1,60 @@
-HELP.md
+# Logs
+logs/
+*.log
+
+# Build
+/build/
 target/
-.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven Wrapper
+.mvn/
 !**/src/main/**/target/
 !**/src/test/**/target/
+mvnw
+mvnw.cmd
+mvn-wrapper.jar
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Gradle
+.gradle/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+gradlew
+gradlew.bat
+gradle-wrapper.jar
 
-### VS Code ###
+# STS
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
 .vscode/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Help files or metadata
+HELP.md

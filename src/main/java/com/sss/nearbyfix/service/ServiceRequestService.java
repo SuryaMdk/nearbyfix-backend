@@ -2,12 +2,11 @@ package com.sss.nearbyfix.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.Optional;
 
 import com.sss.nearbyfix.model.ServiceRequest;
 import com.sss.nearbyfix.repository.ServiceRequestRepository;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ServiceRequestService {
@@ -16,25 +15,33 @@ public class ServiceRequestService {
     private ServiceRequestRepository requestRepository;
 
     public ServiceRequest createRequest(ServiceRequest request) {
-        request.setStatus("PENDING");
+        request.setStatus("Pending");
         return requestRepository.save(request);
     }
 
-    public List<ServiceRequest> getRequestsByProvider(Long providerId) {
-        return requestRepository.findByProviderId(providerId);
-    }
+	public List<ServiceRequest> findByUserId(Long userId) {
+		// TODO Auto-generated method stub
+		return requestRepository.findByUserId(userId);
+	}
 
-    public Optional<ServiceRequest> getRequestById(Long id) {
-        return requestRepository.findById(id);
-    }
+	public List<ServiceRequest> findByServiceTypeAndStatus(String serviceType, String status) {
+		// TODO Auto-generated method stub
+		return requestRepository.findByserviceTypeAndStatus(serviceType, status);
+	}
 
-    public ServiceRequest updateStatus(Long id, String status) {
-        Optional<ServiceRequest> req = requestRepository.findById(id);
-        if (req.isPresent()) {
-            ServiceRequest r = req.get();
-            r.setStatus(status.toUpperCase());
-            return requestRepository.save(r);
-        }
-        return null;
-    }
+	public Optional<ServiceRequest> findById(Long id) {
+		// TODO Auto-generated method stub
+		return requestRepository.findById(id);
+	}
+
+	public void save(ServiceRequest req) {
+		// TODO Auto-generated method stub
+		requestRepository.save(req);
+	}
+
+	public List<ServiceRequest> findByProviderId(Long providerId) {
+		// TODO Auto-generated method stub
+		return requestRepository.findByProviderId(providerId);
+	}
+
 }

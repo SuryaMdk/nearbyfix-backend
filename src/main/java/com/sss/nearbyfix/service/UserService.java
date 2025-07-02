@@ -10,7 +10,8 @@ import com.sss.nearbyfix.repository.UserRepository;
 
 @Service
 public class UserService {
-	@Autowired
+
+    @Autowired
     private UserRepository userRepository;
 
     public User registerUser(User user) {
@@ -25,7 +26,7 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-	public User login(String email, String password) {
-		return userRepository.findByEmailAndPassword(email, password);
-	}
+    public Optional<User> login(String email, String password) {
+        return Optional.ofNullable(userRepository.findByEmailAndPassword(email, password));
+    }
 }
