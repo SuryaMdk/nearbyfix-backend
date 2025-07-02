@@ -14,5 +14,5 @@ RUN chmod +x mvnw
 RUN ./mvnw package -DskipTests
 
 # ✅ Run the built JAR
-CMD ["java", "-jar", "target/nearbyfix-backend-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/nearbyfix-0.0.1-SNAPSHOT.jar"]
 
